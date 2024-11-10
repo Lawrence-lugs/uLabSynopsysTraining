@@ -1,6 +1,6 @@
 # Lab 2 : Simple Sequential Circuit
 
-![header](image.png)
+![header](img/header.png)
 
 # Introduction
 The aim of this laboratory exercise is to design a simple sequential circuit in Verilog.
@@ -25,4 +25,4 @@ The serial pattern detector should detect the pattern `1010`. At each rising edg
 ## Design Verification
 A sample timing diagram for the serial pattern detector is shown in the figure below. A shaded value in gray means that the signal is uninitialized. Use the provided [testbench](tb/tb_pattern_detector.v) to verify the functionality of your design. Show the waveforms to your instructor.
 
-![timing diagram](image-1.png)
+![timing diagram](img/timing_diagram.png)
