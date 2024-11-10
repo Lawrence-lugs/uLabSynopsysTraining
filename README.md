@@ -6,6 +6,16 @@ This repository contains the lab materials for Microlab/Synopsys training aimed 
 
 Inside the lab folders are more README files discussing the instructions for each lab.
 
+# Lesson Structure
+
+|  | Lecture | Lab | Lab Goals |
+| --- | --- | --- | --- |
+| Module 1 | Combinational Logic Design | RTL Simulation <br> Running OpenLane |\> Openlane Installation<br>\> Calling Verilator<br>\> Calling OpenLane flow<br>\> Writing OpenLane config files<br>\> Writing OpenLane pin config files<br>\> Viewing the output chip with Klayout |
+| Module 2 | Sequential RTL & ASM | Sequence detector |\> Clocked Always Blocks<br>\> FSM translation into Verilog |
+| Module 3 | Timing (Synopsys guest) | Timing and Constraints |\> Gate-level Simulations & SDF Annotation<br>\> STA Reports<br>\> SDC Files |
+| Module 4 | Design Testing | MP Sequential Divider |\> ASMs<br>\> RTL Design |
+| Module 5 | Design for Testability | MP Sequential Divider |\> Running OpenLane on your design |
+
 # Tools Installation
 
 >!! Skip this part if you are using the Microlab setup for the labs.
@@ -22,7 +32,9 @@ If you are not using the Microlab virtual machines for this, please install http
 
 This should show you a desktop environment with all of the requirements already installed.
 
-For those using this installation, make sure to perform all the projects in the directory `~/eda/designs` or `<HOME>/eda/designs` for example, for me, it would be `lquizon/eda/designs` . Create the directory if it does not already exist.
+If you are planning to edit files *outside* of this VNC environment (i.e. your host computer) for reasons like using your own text editor, make sure to perform all the projects in the directory `~/eda/designs` or `<HOME>/eda/designs`. This is the directory that is visible to the VNC.
+
+For example, for me, I would clone all the repositories and make designs in `lquizon/eda/designs`. 
 
 # Setup
 
