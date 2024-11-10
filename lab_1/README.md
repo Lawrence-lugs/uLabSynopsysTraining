@@ -40,7 +40,7 @@ For those using this installation, make sure to perform all the projects in the 
 # Setup
 
 1. Preliminary
-   1. For people using the Microlab VMs: In a terminal, ssh into your given Microlab VM: e.g. `ssh lquizon@10.158.16.170` 
+   1. For people using the Microlab VMs: In a terminal, ssh into your given Microlab VM: e.g. `ssh lquizon@xx.xxx.xx.xxx` 
       1. Go into the openlane2 folder: `cd openlane2`
       2. Start the nix-shell: `nix-shell`
       3. Go back to the home directory: `cd ~`
