@@ -14,6 +14,16 @@ In this exercise, you will be designing a signed sequential division hardware.
 ## Interface
 The table below shows the external interface of the signed sequential divider. The `clk` and `nrst` inputs serve as the clock and active-low asynchronous reset, respectively. Asserting `nrst` (i.e., setting it to $0$) should set the outputs `res` and `done` to $0$. The `en` signal is a high-asserted 1-bit input which initiates the computation. If `en` is asserted for 1 clock cycle, the computation starts. It can be de-asserted once the computation procedure has started. The sequential divider takes in two operands, `opA` and `opB`, and produces a result, `res`. The done signal is a high-asserted 1-bit output which asserts whenever the computation procedure is finished. Once it is asserted, the result of the computation should be present at the output `res`. Both outputs will hold their values until another operation is requested (i.e., when `en` is asserted again). You are required to set the module name to *div*. 
 
+| Port name | Direction | Width | Description |
+|---|---|---|---|
+| `clk` | in | 1 | clock |
+| `nrst` | in | 1 | active-low asynchronous reset |
+| `opA` | in | 32 | first operand |
+| `opB` | in | 32 | second operand |
+| `en` | in | 1 | enable signal |
+| `res` | out | 32 | quotient of the operands  |
+| `done` | out | 1 | done signal |
+
 ## Operation
 The sequential non-restoring division algorithm operates as follows. The example shows 4-bit unsigned operands. 
 
