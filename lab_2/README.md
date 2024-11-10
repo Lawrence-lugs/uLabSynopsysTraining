@@ -9,7 +9,7 @@ The aim of this laboratory exercise is to design a simple sequential circuit in 
 In this exercise, you will be designing a serial pattern detector that detects the pattern `1010`.
 
 ## Interface
-The table shows the external interface of the serial pattern detector. The `clk` and `nrst` inputs serve as the clock and active-low asynchronous reset, respectively. Asserting `nrst` (i.e., setting it to $0$) should set the outputs `parallel_out` and `match` to $0$. You are required to set the module name to `pattern_detector`.
+The table shows the external interface of the serial pattern detector. The `clk` and `nrst` inputs serve as the clock and active-low asynchronous reset, respectively. Asserting `nrst` (i.e., setting it to $0$) should set the outputs `parallel_out` and `match` to $0$. You are required to set the module name to *pattern_detector*.
 
 | Port name | Direction | Width | Description |
 |---|---|---|---|
