@@ -20,9 +20,7 @@ If you are not using the Microlab virtual machines for this, please install http
 5. Access [localhost](http://localhost) in your browser.
 6. Input `abc123` (the default password)
 
-This should show you a desktop environment as below, with all of the requirements already installed.
-
-![alt text](image-1.png)
+This should show you a desktop environment with all of the requirements already installed.
 
 For those using this installation, make sure to perform all the projects in the directory `~/eda/designs` or `<HOME>/eda/designs` for example, for me, it would be `lquizon/eda/designs` . Create the directory if it does not already exist.
 
@@ -36,6 +34,6 @@ For those using this installation, make sure to perform all the projects in the 
    2. For people running the **iic-osic-tools** VNC, just make sure to be using the VNC in your browser and then open the terminal.
 2. Clone the lab files from the git
     1. `git clone https://github.com/Lawrence-lugs/uLabSynopsysTraining`
-3. Enter the cloned directory, and enter the lab1 folder
+3. Enter the cloned directory, and enter the repo folder
     1. `cd uLabSynopsysTraining`
-    2. `cd lab_1`
+ 4. You are now ready to follow the labs
