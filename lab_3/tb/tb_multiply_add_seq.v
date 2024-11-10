@@ -17,16 +17,21 @@ reg nrst;
 reg [7:0] a;
 reg [7:0] b;
 reg [7:0] c;
+reg start;
+wire done;
 wire [15:0] o;
 
+
 // Instance of module under test
-multiply_add dut (
+multiply_add_seq dut (
     .clk(clk),
     .nrst(nrst),
     .a(a),
     .b(b),
+    .start(start),
     .constant(c),
-    .o(o)
+    .o(o),
+    .done(done)
 );
 
 // Clock generation
@@ -52,6 +57,7 @@ initial begin
     b = 0;
     c = 0;
     right = 0;
+    start = 0; // Add start
     
     // Reset sequence
     #(CLK_PERIOD*2);
@@ -67,8 +73,13 @@ initial begin
         a = a0[7:0];
         b = b0[7:0];
         c = c0[7:0];
+	start = 1;
         $display("Random values - a=%d, b=%d, c=%d", a, b, c);
-        #(CLK_PERIOD);
+	#(CLK_PERIOD);
+	start = 0;
+	while(!done) begin
+	    #(CLK_PERIOD);
+	end
 	ans = a * b + c;
 	if (o == ans) begin
 	    $display("Output: %d, Expected: %d, CORRECT", o,ans);

@@ -1,12 +1,10 @@
-module multiply_add_seq #(
-    parameter dataSize = 8,
-    localparam outputSize = dataSize*2+1
-) (
+module multiply_add_seq
+(
     input clk, nrst,
-    input [dataSize-1:0] a,
-    input [dataSize-1:0] b,
-    input [dataSize-1:0] constant,
-    output reg [outputSize-1:0] o,
+    input [7:0] a,
+    input [7:0] b,
+    input [7:0] constant,
+    output reg [15:0] o,
     input start,                    // New signal to start multiplication
     output reg done                 // New signal to indicate completion
 );
@@ -17,10 +15,10 @@ localparam MULTIPLY = 2'b01;
 localparam ADD = 2'b10;
 
 // Registers for storing inputs and intermediate results
-reg [dataSize-1:0] a_q, b_q, d_q;
-reg [dataSize*2-1:0] product;
-reg [dataSize-1:0] multiplier;
-reg [dataSize*2-1:0] multiplicand;
+reg [7:0] a_q, b_q, d_q;
+reg [15:0] product;
+reg [7:0] multiplier;
+reg [15:0] multiplicand;
 reg [5:0] bit_counter;
 reg [1:0] state;
 
@@ -39,7 +37,8 @@ always @(posedge clk or negedge nrst) begin
     end else begin
         case (state)
             IDLE: begin
-                if (start) begin
+                done <= 0;
+		if (start) begin
                     // Load operands
                     a_q <= a;
                     b_q <= b;
@@ -47,10 +46,9 @@ always @(posedge clk or negedge nrst) begin
                     // Initialize multiplication
                     product <= 0;
                     multiplier <= b;
-                    multiplicand <= {{dataSize{1'b0}}, a};
-                    bit_counter <= dataSize;
+                    multiplicand <= {{8{1'b0}}, a};
+                    bit_counter <= 8;
                     state <= MULTIPLY;
-                    done <= 0;
                 end
             end
 

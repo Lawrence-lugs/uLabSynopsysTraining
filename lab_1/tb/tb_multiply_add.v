@@ -3,22 +3,19 @@
 module multiply_add_tb;
 
 // Parameters
-parameter dataSize = 8;
-localparam outputSize = dataSize*2+1;
 localparam CLK_PERIOD = 10;
+localparam NUM_TESTS = 20;
 
 // Signals
 reg clk;
 reg nrst;
-reg [dataSize-1:0] a;
-reg [dataSize-1:0] b;
-reg [dataSize-1:0] c;
-wire [outputSize-1:0] o;
+reg [7:0] a;
+reg [7:0] b;
+reg [7:0] c;
+wire [15:0] o;
 
 // Instance of module under test
-multiply_add #(
-    .dataSize(dataSize)
-) dut (
+multiply_add dut (
     .clk(clk),
     .nrst(nrst),
     .a(a),
@@ -33,7 +30,8 @@ initial begin
     forever #(CLK_PERIOD/2) clk = ~clk;
 end
 
-integer ans;
+integer ans,a0,b0,c0;
+integer right;
 
 // Test stimulus
 initial begin
@@ -41,11 +39,14 @@ initial begin
     $dumpfile("multiply_add_tb.vcd");
     $dumpvars(0, multiply_add_tb);
     
+    // $sdf_annotate("../mapped/multiply_add_mapped.sdf",dut);
+
     // Initial values
     nrst = 1;
     a = 0;
     b = 0;
     c = 0;
+    right = 0;
     
     // Reset sequence
     #(CLK_PERIOD*2);
@@ -53,14 +54,26 @@ initial begin
     #(CLK_PERIOD*2);
     nrst = 1;
     #(CLK_PERIOD*2);
-    
-    repeat(10) begin
-        a = $random[7:0];
-        b = $random[7:0];
-        c = $random[7:0];
+
+    repeat(NUM_TESTS) begin
+        a0 = $random;
+        b0 = $random;
+        c0 = $random;
+        a = a0[7:0];
+        b = b0[7:0];
+        c = c0[7:0];
+        $display("Random values - a=%d, b=%d, c=%d", a, b, c);
         #(CLK_PERIOD);
-        $display("Random values - a=%d, b=%d, c=%d, o=%d, %d", a, b, c, o, ans);
+	ans = a * b + c;
+	if (o == ans) begin
+	    $display("Output: %d, Expected: %d, CORRECT", o,ans);
+	    right = right + 1;
+        end else begin
+            $display("Output: %d, Expected: %d, WRONG", o,ans);
+	end
     end
+
+    $display("Got %d / %d correct",right,NUM_TESTS);
     
     // End simulation
     #(CLK_PERIOD*5);
