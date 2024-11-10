@@ -12,7 +12,7 @@ Inside the lab folders are more README files discussing the instructions for eac
 | --- | --- | --- | --- |
 | Module 1 | Combinational Logic Design | RTL Simulation <br> Running OpenLane |\> Openlane Installation<br>\> Calling IVerilog<br>\> Calling OpenLane flow<br>\> Writing OpenLane config files<br>\> Writing OpenLane pin config files<br>\> Viewing the output chip with Klayout |
 | Module 2 | Sequential RTL & ASM | Sequence detector |\> Clocked Always Blocks<br>\> FSM translation into Verilog |
-| Module 3 | Timing (Synopsys guest) | Timing and Constraints |\> Gate-level Simulations & SDF Annotation<br>\> STA Reports<br>\> SDC Files |
+| Module 3 | Timing | Timing and Constraints |\> Gate-level Simulations & SDF Annotation<br>\> STA Reports<br>\> SDC Files |
 | Module 4 | Design Testing | MP Sequential Divider |\> ASMs<br>\> RTL Design |
 | Module 5 | Design for Testability | MP Sequential Divider |\> Running OpenLane on your design |
 
