@@ -1,6 +1,6 @@
 # Machine Problem : Sequential Divider
 
-![header](img/image.png)
+![header](img/header.png)
 
 # Introduction
 We typically design and implement synchronous digital designs using finite-state machine (FSM) techniques. Such methods have been effective since the digital circuits to be implemented have predictable outputs and a relatively small number of states. For large system designs with a huge number of states, these techniques might not be practical anymore. 
