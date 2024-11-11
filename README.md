@@ -25,7 +25,7 @@ If you are not using the Microlab virtual machines for this, please install http
 1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your OS
     1. A requirement for Docker is WSL2 on windows. Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/install) to setup WSL2.
 2. Start Docker Desktop
-    1. Open the terminal inside docker
+1. Open the terminal inside docker
 3. In that `git clone --depth=1 https://github.com/iic-jku/iic-osic-tools.git`
     1. For windows users, if git is not found, run the following in the command prompt: `winget install --id Git.Git -e --source winget`
 4. Change directory into the cloned directory: `cd iic-osic-tools`
@@ -42,9 +42,9 @@ For example, for me, I would clone all the repositories and make designs in `lqu
 
 # Setup
 
-1. Preliminary
+1. Before starting any lab, do these:
    1. For people using the Microlab PCs, login to the synTrain user account (credentials should be on the whiteboard)
-      1. In a terminal, ssh into your given Microlab VM: e.g. `ssh lquizon@xx.xxx.xx.xxx` 
+      1. In a terminal, ssh into your given Microlab VM: e.g. `ssh lquizon@xx.xxx.xx.xxx -XY` 
       2. Go into the openlane2 folder: `cd openlane2`
       3. Start the nix-shell: `nix-shell`
       4. Go back to the home directory: `cd ~`
