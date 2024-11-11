@@ -145,7 +145,7 @@ We can change the locations of the pins created by OpenLane by adding a file nam
     a.*
     b.*
     #N
-    d.*
+    constant.*
     #E
     o.*
     #S
