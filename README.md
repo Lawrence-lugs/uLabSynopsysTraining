@@ -22,13 +22,14 @@ Inside the lab folders are more README files discussing the instructions for eac
 
 If you are not using the Microlab virtual machines for this, please install https://github.com/iic-jku/IIC-OSIC-TOOLS:
 
-1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your OS 
-2. `git clone --depth=1 https://github.com/iic-jku/iic-osic-tools.git`
-3. Start Docker Desktop
-4. Then, use `./start_vnc.sh`  (or `./start_vnc.bat`, if you’re on Windows)
+1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your OS
+    1. A requirement for Docker is WSL2 on windows. Follow the instructions [here](https://learn.microsoft.com/en-us/windows/wsl/install) to setup WSL2.
+3. `git clone --depth=1 https://github.com/iic-jku/iic-osic-tools.git`
+4. Start Docker Desktop
+5. Then, use `./start_vnc.sh`  (or `./start_vnc.bat`, if you’re on Windows)
     1. This part will take a while, as the PDKs and tools are downloaded.
-5. Access [localhost](http://localhost) in your browser.
-6. Input `abc123` (the default password)
+6. Access [localhost](http://localhost) in your browser.
+7. Input `abc123` (the default password)
 
 This should show you a desktop environment with all of the requirements already installed.
 
