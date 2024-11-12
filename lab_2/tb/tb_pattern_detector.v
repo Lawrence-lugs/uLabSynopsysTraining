@@ -19,6 +19,9 @@ module tb_pattern_detector ();
         #5 clk = ~clk;
 
     initial begin
+        $dumpfile("tb_pattern_detector.vcd");
+        $dumpvars(0, tb_pattern_detector);
+
         clk = 1'b0;
         nrst = 1'b0;
         serial_in = 1'b0;
