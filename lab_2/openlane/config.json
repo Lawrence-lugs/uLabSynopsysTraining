@@ -1,0 +1,7 @@
+{
+    "DESIGN_NAME": "pattern_detector",
+    "VERILOG_FILES": ["dir::../rtl/pattern_detector.v"],
+    "CLOCK_PERIOD": 10,
+    "CLOCK_PORT": "clk",
+    "FP_CORE_UTIL": 0.30
+}
