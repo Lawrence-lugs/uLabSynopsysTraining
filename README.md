@@ -40,6 +40,8 @@ If you are planning to edit files *outside* of this VNC environment (i.e. your h
 
 For example, for me, I would clone all the repositories and make designs in `lquizon/eda/designs`. 
 
+| This repo deals with the digital flow. For the analog flow, see [JKU's Analog IC Design Course](https://iic-jku.github.io/analog-circuit-design/#sec-mosfet).
+
 # Setup
 
 1. Before starting any lab, do these:
